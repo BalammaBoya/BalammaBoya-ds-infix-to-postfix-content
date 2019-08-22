@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Infix and Postfix</title>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <style>
+        .exp {
+            display: none;
+        }
+        
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #2780C6;
+            text-align: center;
+            color: #fff;
+        }
+        
+        #headings {
+            background-color: #2780C6;
+            text-align: center;
+            color: #fff;
+        }
+        
+        td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: center;
+            height: 20px;
+        }
+        
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137483063-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-137483063-7');
+    </script>
+</head>
+
+<body>
+    <div class="exp" title="Infix and Postfix">
+        <div class="longt">
+            <h1 class="hlongt">Introduction to Infix and Postfix</h1>
+        </div>
+        <div class="preamble">
+            <div class="art txt" title="Estimation">
+                <div class="longt">
+                    <h2 class="hlongt">Estimated Time</h2>
+                </div>
+                <div class="art-body">
+                    <p>1hr 10min</p>
+                </div>
+            </div>
+
+            <div class="art req" title="Infix and Postfix Introduction">
+                <div class="longt">
+                    <h2 class="hlongt">Infix and Postfix Introduction</h2>
+                </div>
+                <div class="description">
+                    <p>
+                        Demo Video
+                    </p>
+                </div>
+            </div>
+
+            <div class="art txt" title="Prerequisites">
+                <div class="longt">
+                    <h2 class="hlongt">Prerequisites of the Experiment</h2>
+                </div>
+                <div class="art-body">
+                    <ul>
+                        <li>Basic knowledge on <a href="https://en.wikipedia.org/wiki/Infix">Infix</a>, and <a href="https://en.wikipedia.org/wiki/Postfix">Postfix</a></li>
+                        <li>And above all, a curiosity to learn and explore!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="art txt" title="Overview">
+                <div class="longt">
+                    <h2 class="hlongt">Overview of the Experiment</h2>
+                </div>
+                <div class="art-body">
+                    <ul>
+                        <li>
+                            The aim of this experiment is to
+                            understand the push and pop
+                            operations of stack and
+                            conversion of infix expressions
+                            to postfix expressions using
+                            stack and without using stack.
+                        </li>
+                        <li>
+                            The experiment features a series
+                            of modules with video lectures,
+                            interactive demonstrations,
+                            simulations, hands-on practice
+                            exercises and quizzes for self
+                            analysis.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="art txt" title="Learning Objectives">
+                <div class="longt">
+                    <h2 class="hlongt">Learning Objectives</h2>
+                </div>
+                <div class="art-body">
+                    <p>In this experiment on linked lists we will learn the following topics:</p>
+                    <ul>
+                        <li>Formal Definitions of Infix and Postfix expressions.</li>
+                        <li>Basic concepts behind Infix to Postfix conversion.</li>
+                        <li>Conversion methods from Infix to Postfix.</li>
+                        <li>Evaluation method of Postfix Expressions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="art txt" title="Modules and Weightage">
+                <div class="longt">
+                    <h2 class="hlongt">Experiment Modules & their Weightage</h2>
+                </div>
+                <div class="art-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align:center">Module</th>
+                                <th style="text-align:center">Weightage</th>
+                                <th style="text-align:center">Expectation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pre-test</td>
+                                <td>5%</td>
+                                <td>Solve All Questions</td>
+                            </tr>
+                            <tr>
+                                <td>Formally defining the Expressions</td>
+                                <td>5%</td>
+                                <td>Become able to indentify different expressions </td>
+                            </tr>
+                            <tr>
+                                <td>Introduction to Infix to Postfix Conversion</td>
+                                <td>10%</td>
+                                <td>Able to Convert Infix Expression without using stack</td>
+                            </tr>
+                            <tr>
+                                <td>Conversion using Stack Operations</td>
+                                <td>25%</td>
+                                <td>Try all operations with atleast two examples using stack</td>
+                            </tr>
+                            <tr>
+                                <td>Evaluation of the Postfix Expressions</td>
+                                <td>25%</td>
+                                <td>Able to evaluate any postfix expression(solve atleast two) </td>
+                            </tr>
+                            <tr>
+                                <td>Post-assessment</td>
+                                <td>30%</td>
+                                <td>Solve all Questions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="lu" title="Pre-test">
+            <div class="longt">
+                <h1 class="hlongt">Pre-test of the Experiment</h1>
+            </div>
+            <div class="preamble">
+                <div class="art txt" title="Estimation">
+                    <div class="longt">
+                        <h2 class="hlongt">Estimated Time</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>10 minutes</p>
+                    </div>
+                </div>
+                <div class="art txt" title="Objectives">
+                    <div class="longt">
+                        <h2 class="hlongt">Instructions for Pre-Test</h2>
+                    </div>
+                    <div class="art-body">
+                        <ul>
+                            <li>Pretest includes questions on
+                                <strong>stacks, linkedlist.</strong>
+                            </li>
+                            <li>If you want to revise these
+                                topics before taking the
+                                quiz, go through the Recap
+                                module first.
+                            </li>
+                            <li>Read the questions in the
+                                quiz section and select the
+                                correct option from the ones
+                                provided. Please note that
+                                some
+                                <strong>questions may have
+                                 more than one correct
+                                 response.
+                                </strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="task" title="Recap">
+                <div class="longt">
+                    <h2 class="hlongt">Prerequisites</h2>
+                </div>
+                <div class="art txt" title="Links to Prerequisites">
+                    <div class="longt">
+                        <h2 class="hlongt">Links to Prerequisites</h2>
+                    </div>
+                    <div class="art-body">
+                        <ul>
+                            <li>Given below are the links to learn the prerequisites:</li>
+                            <li><a href="https://study.com/academy/lesson/what-is-a-mathematical-expression-definition-examples-quiz.html">Basic mathematical expressions and their functionings</a></li>
+                            <li><a href="https://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm">Operation of stack by Push and Pop methods</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Binary_expression_tree">A little bit about Expression trees(not necessary)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="quiz" title="Pre-test Quiz">
+                <div class="longt">
+                    <h2 class="hlongt">A Quiz with Multiple Choice Questions</h2>
+                </div>
+
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question1">
+                            <div class="art-body">
+                                <p>Q1. What does push operation on a stack do?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c1">
+                                <div class="art-body">
+                                    <p>(A) Adds an element to the bottom of the stack.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c2">
+                                <div class="art-body">
+                                    <p>(B) Adds an element to the top of the stack.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c3">
+                                <div class="art-body">
+                                    <p>(C) Removes an element from the top of the stack.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c4">
+                                <div class="art-body">
+                                    <p>(D) Teacher mugs up all students names.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Push operation adds an element to the top of the stack.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question2">
+                            <div class="art-body">
+                                <p>Q2. Situation: A teacher
+                                    wants to remember the
+                                    names of all students in
+                                    the class. Which of the
+                                    following best possible
+                                    way to use the linked
+                                    list in this situation?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c1">
+                                <div class="art-body">
+                                    <p>(A) Teacher mugs up all students names.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c2">
+                                <div class="art-body">
+                                    <p>(B) Teacher asks her
+                                        favorite student to
+                                        mug up all others
+                                        names and help her
+                                        whenever needed.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c3">
+                                <div class="art-body">
+                                    <p>(C) Teacher asks each
+                                        student to remember
+                                        the person sitting
+                                        next to him/her and
+                                        the teacher will
+                                        only have to
+                                        remember the first
+                                        person's name.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c4">
+                                <div class="art-body">
+                                    <p>(D) Teacher asks all students to mug every other student's name..</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>It's similar to implementation of linkedlist.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question3">
+                            <div class="art-body">
+                                <p>Q3. Situation: A teacher
+                                    wants to remember the
+                                    names of all students in
+                                    the class. In the
+                                    aforementioned question,
+                                    what are the pros and
+                                    cons using linked list
+                                    faced by the teacher?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q3-c1">
+                                <div class="art-body">
+                                    <p>(A) It minimizes her effort..</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q3-c2">
+                                <div class="art-body">
+                                    <p>(B) To access a student's name it will take a lot of time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q3-c3">
+                                <div class="art-body">
+                                    <p>(C) Both A and B</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q3-c4">
+                                <div class="art-body">
+                                    <p>(D) None of these</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Pros and cons are:</p>
+                                <ul>
+                                    <li>It minimises her effort.</li>
+                                    <li>It takes time to acces a student's name.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question4">
+                            <div class="art-body">
+                                <p>Q4. Which of the following best describes a stack?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q4-c1">
+                                <div class="art-body">
+                                    <p>(A) People standing at Starbucks..</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q4-c2">
+                                <div class="art-body">
+                                    <p>(B) A family tree</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q4-c3">
+                                <div class="art-body">
+                                    <p>(C) A football team</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q4-c4">
+                                <div class="art-body">
+                                    <p>(D) Water in water bottle</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Water which is at the top comes out first similar to LIFO principle.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question5">
+                            <div class="art-body">
+                                <p>Q5. On what principle objects are inserted and removed in stacks?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q5-c1">
+                                <div class="art-body">
+                                    <p>(A) LIFO </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q5-c2">
+                                <div class="art-body">
+                                    <p>(B) FIFO </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q5-c3">
+                                <div class="art-body">
+                                    <p>(C) Both A and B</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q5-c4">
+                                <div class="art-body">
+                                    <p>(D) None of These</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Stacks work on LIFO or FILO principle.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lu" title="Defining the Expressions">
+            <div class="longt">
+                <h1 class="hlongt">Pre-test of Infix and Postfix</h1>
+            </div>
+            <div class="preamble">
+                <div class="art txt" title="Estimation">
+                    <div class="longt">
+                        <h2 class="hlongt">Estimated Time</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>10 minutes</p>
+                    </div>
+                </div>
+                <div class="art req" title="Defining the Expressions Introduction">
+                    <div class="longt">
+                        <h2 class="hlongt">Defining the Expressions Introduction</h2>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Demo Video
+                        </p>
+                    </div>
+                </div>
+                <div class="art txt" title="Conversion of in to post">
+                    <div class="longt">
+                        <h2 class="hlongt">Conversion of infix to post fix</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>This module helps the better
+                           understanding of Infix to Postfix
+                           conversion of expressions and
+                           evaluation of Postfix expression.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task" title="Introducing Infix Expressions">
+                <div class="longt">
+                    <h2 class="hlongt">Introducing Infix Expressions of Infix and Postfix</h2>
+                </div>
+                <div class="art txt" title="Definition of Infix Expression">
+                    <div class="longt">
+                        <h2 class="hlongt">Definition of an Infix Expression</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>The operator is present between
+                           the operands on which it is acted
+                           upon.<br> It is also the
+                            expression obtained from inorder
+                            travesal of an expression tree.
+                        </p>
+                        <ul>
+                            <li> ( A + B ) * C </li>
+                            <li> 1 + 2 * 4 + 5 / 2 - 1</li>
+                        </ul>
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="art req" title="Definition of an Infix Expression">
+                    <div class="longt">
+                        <h2 class="hlongt">Definition of an Infix Expression Example</h2>
+                    </div>
+                    <div class="description">
+                        <p>Gif explains inorder traversal.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="quiz" title="Infix Quiz">
+                <div class="longt">
+                    <h2 class="hlongt">A Quiz with Multiple Choice Questions</h2>
+                </div>
+
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question1">
+                            <div class="art-body">
+                                <p>Q1) A postfix expression is also called as ______</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c1">
+                                <div class="art-body">
+                                    <p>(A) RPN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c2">
+                                <div class="art-body">
+                                    <p>(B) PPN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c3">
+                                <div class="art-body">
+                                    <p>(C) DNP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c4">
+                                <div class="art-body">
+                                    <p>(D) GNP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Explanation of question 1 for the right answer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question2">
+                            <div class="art-body">
+                                <p>Q2. Expression in which Operator is written after Operand is called as</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c1">
+                                <div class="art-body">
+                                    <p>(A) Infix Expression</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c2">
+                                <div class="art-body">
+                                    <p>(B) Postfix Expression</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c3">
+                                <div class="art-body">
+                                    <p>(C) Prefix Expression</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c4">
+                                <div class="art-body">
+                                    <p>(D) None of these</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Explanation of question 2 for the right answer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question3">
+                            <div class="art-body">
+                                <p>Q3. Which of the following is an Infix Expression</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c1">
+                                <div class="art-body">
+                                    <p>(A) b * c + d / e</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c2">
+                                <div class="art-body">
+                                    <p>(B) b*cde/+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c3">
+                                <div class="art-body">
+                                    <p>(C) + + A * B C D</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Explanation of question 2 for the right answer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="task" title="Introducing Postfix Expressions">
+                <div class="longt">
+                    <h2 class="hlongt">Introducing Postfix Expressions of Infix and Postfix</h2>
+                </div>
+                <div class="art txt" title="Definition of Postfix Expression">
+                    <div class="longt">
+                        <h2 class="hlongt">Definition of a Postfix Expression (RPN) </h2>
+                    </div>
+                    <div class="art-body">
+                        <p>The operator is present after the
+                           operands that it is acted upon.<br> It
+                           is also the expression obtained
+                           from postorder travesal of an
+                           expression tree.<br> It is also
+                           called the Reverse Polish
+                           Notation (RPN).
+                        </p>
+                        <ul>
+                            <li> 2 3 + (RPN of 2 + 3)</li>
+                            <li> A B + C * (RPN of ( A + B ) * C)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="art req" title="Definition of a Postfix Expression">
+                    <div class="longt">
+                        <h2 class="hlongt">Definition of a Postfix Expression Example</h2>
+                    </div>
+                    <div class="description">
+                        <p>Gif explains postorder traversal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lu" title="Infix to Postfix Conversion without Stack">
+            <div class="longt">
+                <h1 class="hlongt">Infix to Postfix Conversion without using Stack</h1>
+            </div>
+            <div class="preamble">
+                <div class="art txt" title="Estimation">
+                    <div class="longt">
+                        <h2 class="hlongt">Estimated Time</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>5 minutes</p>
+                    </div>
+                </div>
+                <div class="art req" title="Infix to Postfix Conversion without Stack Introduction">
+                    <div class="longt">
+                        <h2 class="hlongt">Infix to Postfix Conversion without Stack Introduction</h2>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Demo Video
+                        </p>
+                    </div>
+                </div>
+                <div class="art txt" title="Objectives">
+                    <div class="longt">
+                        <h2 class="hlongt">Learning Objectives of this Module</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>In this module we will learn how
+                           to convert infix expression to
+                           postfix expression without using
+                           stack.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task" title="Algorithm for Conversion without Stack">
+                <div class="longt">
+                    <h2 class="hlongt">Algorithm for Conversion without Stack</h2>
+                </div>
+                <div class="art txt" title="Conversion without Stack">
+                    <div class="longt">
+                        <h2 class="hlongt">Conversion without Stack</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>Algorithm:</p>
+                        <ul>
+                            <li> Parenthesize the expression following operator precedence.</li>
+                            <li>Priority(^) > Priority(/) > Priority(*) > Priority(+) >= Priority(-)</li>
+                            <li> Starting from the lowest level in the parenthesized expression,</li>
+                            <li> Rearrange the expression to RPN as (3 + 4) becomes (3 4 + ).</li>
+                            <li> Go to subsequent upper levels.</li>
+                            <li> Thereby, convert the whole expression to RPN.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="art req" title="Conversion without Stack">
+                    <div class="longt">
+                        <h2 class="hlongt">Conversion without Stack Example</h2>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Image shows conversion without stack
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lu" title="Infix to Postfix Conversion with Stack">
+            <div class="longt">
+                <h1 class="hlongt">Infix to Postfix Conversion with Stack of Infix and Postfix</h1>
+            </div>
+            <div class="preamble">
+                <div class="art txt" title="Estimation">
+                    <div class="longt">
+                        <h2 class="hlongt">Estimated Time</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>25 minutes</p>
+                    </div>
+                </div>
+                <div class="art req" title="Infix to Postfix Conversion with Stack Introduction">
+                    <div class="longt">
+                        <h2 class="hlongt">Infix to Postfix Conversion with Stack Introduction</h2>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Demo Video
+                        </p>
+                    </div>
+                </div>
+                <div class="art txt" title="Objectives">
+                    <div class="longt">
+                        <h2 class="hlongt">Learning Objectives of this Module</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>
+                            In this module, we will be learning about :
+                        </p>
+                        <ul>
+                            <li>
+                                <b>Push Operations on Stack</b> :
+                                We will learn about what
+                                elements are needed to be
+                                pushed on to the stack and
+                                how to validate an
+                                expression.
+                            </li>
+                            <li>
+                                <b>Push Operations on Stack</b> :
+                                We will learn about what
+                                elements are needed to be
+                                popped from the stack.
+                            </li>
+                            <li>
+                                <b>The Whole Conversion</b> :
+                                We will learn about how to
+                                convert a given infix
+                                expression into postfix
+                                expression using push and
+                                pop operations.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="task" title="Validation of Expressions">
+                <div class="longt">
+                    <h2 class="hlongt">Validation of Expressions</h2>
+                </div>
+                <div class="art req" title="Validation Demo">
+                    <div class="longt">
+                        <h2 class="hlongt">Validation of Expression Demo</h2>
+                    </div>
+                    <div class="description">
+                        <p>Demo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="task" title="Push and Pop Operations On Stack">
+                <div class="longt">
+                    <h2 class="hlongt">Push and Pop Operations On Stack</h2>
+                </div>
+                <div class="art txt" title="Algorithm for Push Operations on Stack">
+                    <div class="longt">
+                        <h2 class="hlongt">Algorithm for Push Operations on Stack</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>Algorithm :</p>
+                        <ul>
+                            <li>Parenthesize and validate
+                            the given expression using
+                            operator precedence.</li>
+                            <li>Opening brackets and
+                            operators can be pushed into the
+                            stack</li>
+                            <li>Numbers/ Operators can be
+                            moved to the output. </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="art req" title="Push operations Example">
+                    <div class="longt">
+                        <h2 class="hlongt">Push operations Example</h2>
+                    </div>
+                    <div class="description">
+                        <p>
+                            This artefact shows push operations
+                        </p>
+                    </div>
+                </div>
+                <div class="art txt" title="Algorithm for Pop Operations on Stack">
+                    <div class="longt">
+                        <h2 class="hlongt">Algorithm for Pop Operations on Stack</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>The following are the scenarios
+                           where the pop operation is used
+                        </p>
+                        <ul>
+                            <li>If it is an operator, and
+                                none of the situations match
+                                for the Push of the Operator<br> -
+                                then Pop the operator and go
+                                to the next element.
+                            </li>
+                            <li>If it is a closing
+                                parenthesis, pop operators from
+                                the stack and output them until
+                                an opening parenthesis is
+                                encountered. pop and discard the
+                                opening parenthesis.
+                            </li>
+                            <li>If there is no more input,
+                                pop the remaining operators
+                                to output.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="art req" title="Pop Operations Example">
+                    <div class="longt">
+                        <h2 class="hlongt">Pop Operations Example</h2>
+                    </div>
+                    <div class="description">
+                        <p>This image demonstrates the /pop operations/ part of the whole conversion.</p>
+                    </div>
+                </div>
+                <div class="art req" title="Video Demo for Push Operations on Stack">
+                    <div class="longt">
+                        <h2 class="hlongt">Video Demo for Push Operations on Stack</h2>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Demo Video
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="task" title="Push and Pop operations Practice">
+                <div class="longt">
+                    <h2 class="hlongt">Push and Pop operations Practice</h2>
+                </div>
+                <div class="art req" title="Push and Pop Operations Practice">
+                    <div class="longt">
+                        <h2 class="hlongt">Push and Pop Operations Practice</h2>
+                    </div>
+                    <div class="description">
+                        <p>Practice</p>
+                    </div>
+                </div>
+            </div>
+            <div class="task" title="The Whole Conversion">
+                <div class="longt">
+                    <h2 class="hlongt">The Whole Conversion</h2>
+                </div>
+                <div class="art txt" title="Algorithm for the Whole Conversion">
+                    <div class="longt">
+                        <h2 class="hlongt">Algorithm for the Whole Conversion</h2>
+                    </div>
+                    <div class="art-body">
+                        <ul>
+                            <li>1. Scan the infix expression from left to right.</li>
+                            <li>2. If the scanned character is an operand, output it</li>
+                            <li>3. Else, 3.1 If the
+                                precedence of the scanned
+                                operator is greater than the
+                                precedence of the operator
+                                in the stack(or the stack is
+                                empty or the stack contains
+                                a ‘(‘ ), push it. 3.2 Else,
+                                Pop all the operators from
+                                the stack which are greater
+                                than or equal to in
+                                precedence than that of the
+                                scanned operator. After
+                                doing that Push the scanned
+                                operator to the stack. (If
+                                you encounter parenthesis
+                                while popping then stop
+                                there and push the scanned
+                                operator in the stack.)</li>
+                            <li>4. If the scanned character
+                                is an ‘(‘, push it to the
+                                stack.
+                            </li>
+                            <li>5. If the scanned character
+                               a is n ‘)’, pop the stack and
+                               and output it until a ‘(‘ is
+                               encountered, and discard both
+                                the parenthesis.
+                            </li>
+                            <li>6. Repeat steps 2-6 until
+                                infix expression is scanned.
+                            </li>
+                            <li>7. Pop and output from the
+                                stack until it is empty.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="art req" title="Video Demo for the Whole Conversion">
+                    <div class="longt">
+                        <h2 class="hlongt">Video Demo for the Whole Conversion</h2>
+                    </div>
+                    <div class="description">
+                        Demo video should be present here
+                    </div>
+                </div>
+            </div>
+            <div class="task" title="Whole Conversion Exercise">
+                <div class="longt">
+                    <h2 class="hlongt">Whole Conversion Exercise</h2>
+                </div>
+                <div class="art req" title="Conversion Operations Exercise">
+                    <div class="longt">
+                        <h2 class="hlongt">Conversion Operations Exercise</h2>
+                    </div>
+                    <div class="description">
+                        Conversion practice should be present here
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lu" title="Evaluation of Postfix Expressions">
+            <div class="longt">
+                <h1 class="hlongt">Evaluation of Postfix Expressions of Infix and Postfix</h1>
+            </div>
+            <div class="preamble">
+                <div class="art txt" title="Evaluation">
+                    <div class="longt">
+                        <h2 class="hlongt">Evaluation</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>10 minutes</p>
+                    </div>
+                </div>
+                <div class="art req" title="Evaluation of Postfix Expression Introduction">
+                    <div class="longt">
+                        <h2 class="hlongt">Evaluation of Postfix Expression Introduction</h2>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Demo Video
+                        </p>
+                    </div>
+                </div>
+                <div class="art txt" title="Objectives">
+                    <div class="longt">
+                        <h2 class="hlongt">Learning Objectives of this Module</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>Now, that we have converted the
+                           infix expression to postfix, how
+                           do we evaluate them?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="task" title="Evaluation of Postfix Expression">
+                <div class="longt">
+                    <h2 class="hlongt">Evaluation of Postfix Expression</h2>
+                </div>
+                <div class="art txt" title="Algorithm for Postfix Evaluation">
+                    <div class="longt">
+                        <h2 class="hlongt">Algorithm for Postfix Evaluation</h2>
+                    </div>
+                    <div class="art-body">
+                        <ol>
+                            <li>Create an empty stack called operandStack.</li>
+                            <li>Scan the string from left to
+                                right.<br> - If the token is
+                                an operand, convert it from
+                                a string to an integer and
+                                push the value onto the
+                                operand stack.<br> - If the
+                                token is an operator, *, /,
+                                +, or -, it will need two
+                                operands.  Pop the
+                                operandStack twice. The
+                                first pop is the second
+                                operand and the second pop
+                                is the first
+                                operand. Perform the
+                                arithmetic operation. Push
+                                the result back on the
+                                operand stack.
+                            </li>
+                            <li>When the input expression
+                                has been completely
+                                processed, the result is on
+                                the stack. Pop the operand
+                                stack and return the value.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="art req" title="Postfix Evaluation Example">
+                    <div class="longt">
+                        <h2 class="hlongt">Postfix Evaluation Example</h2>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Requirement artefact
+                        </p>
+                    </div>
+                </div>
+                <div class="art req" title="Video Demo for Postfix Evaluation">
+                    <div class="longt">
+                        <h2 class="hlongt">Video Demo for Postfix Evaluation</h2>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Video artefact
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="task" title="Postfix Evaluation Exercise">
+                <div class="longt">
+                    <h2 class="hlongt">Postfix Evaluation Exercise</h2>
+                </div>
+                <div class="art req" title="Exercise for Postfix Evaluation">
+                    <div class="longt">
+                        <h2 class="hlongt">Exercise for Postfix Evaluation</h2>
+                    </div>
+                    <div class="description">
+                        <p>
+                            requirement artefact
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lu" title="Post-test">
+            <div class="longt">
+                <h1 class="hlongt">Post-test of Infix and Postfix</h1>
+            </div>
+            <div class="preamble">
+                <div class="art txt" title="Estimation">
+                    <div class="longt">
+                        <h2 class="hlongt">Estimated Time</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>10 minutes</p>
+                    </div>
+                </div>
+
+                <div class="art txt" title="Objectives">
+                    <div class="longt">
+                        <h2 class="hlongt">Instructions for Quiz</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>Post Test includes questions on
+                           entire experiment concepts. Read
+                           the questions in the quiz section
+                           and select the correct option
+                           from the ones provided. Please
+                           note that some questions may have
+                           more than one correct response.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="quiz" title="Post-test Quiz">
+                <div class="longt">
+                    <h2 class="hlongt">A Quiz on Post Test</h2>
+                </div>
+
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question1">
+                            <div class="art-body">
+                                <p>Q1. Why is there a need
+                                   to convert from infix to
+                                   postfix and then
+                                   evaluate, instead of
+                                   directly evaluating
+                                   infix?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c1">
+                                <div class="art-body">
+                                    <p>(A) It is easier to read for humans</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c2">
+                                <div class="art-body">
+                                    <p>(B) It is easier to
+                                        [[https://en.wikipedia.org/wiki/Parsing][parse]](be
+                                        read by computer).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c3">
+                                <div class="art-body">
+                                    <p>(C) Both A and B</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q1-c4">
+                                <div class="art-body">
+                                    <p>(D) None of these.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Evaluation will be easier for computer if it is in postfix.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question2">
+                            <div class="art-body">
+                                <p>Q2. Postfix evaluation of 1 2 + 3 9 - + 4 +?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c1">
+                                <div class="art-body">
+                                    <p>(A) 3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c2">
+                                <div class="art-body">
+                                    <p>(B) 2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c3">
+                                <div class="art-body">
+                                    <p>(C) 1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q2-c4">
+                                <div class="art-body">
+                                    <p>(D) 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Please refer to The Whole
+                                   Conversion task in Infix
+                                   to Postfix Conversion
+                                   with Stack learning unit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question3">
+                            <div class="art-body">
+                                <p>Q3. Convert infix to postfix 1 + 1 - 3 * 4 / 2 + 3 - 8</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q3-c1">
+                                <div class="art-body">
+                                    <p>(A) 1 1 + 3 - 4 * 2 / + 3 8 -</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q3-c2">
+                                <div class="art-body">
+                                    <p>(B) 1 1 + 3 - 4 / 2 * 3 + 8 -</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q3-c3">
+                                <div class="art-body">
+                                    <p>(C) 1 1 + 3 4 * 2 / - 3 + 8 -</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q3-c4">
+                                <div class="art-body">
+                                    <p>(D) 1 1 * 3 + 4 - 2 + 3 / 8 -</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Please refer to The Whole
+                                   Conversion task in Infix
+                                   to Postfix Conversion
+                                   with Stack learning unit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question4">
+                            <div class="art-body">
+                                <p>Q4. Convert Infix to Postfix a + b * (c ^ d - e) ^ (f + g * h) - i</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q4-c1">
+                                <div class="art-body">
+                                    <p>(A) ab^cd-ef+d*h^*-i+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q4-c2">
+                                <div class="art-body">
+                                    <p>(B) ab^cd-ef+d*h*^-i+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q4-c3">
+                                <div class="art-body">
+                                    <p>(C) abcd^e-fgh*+^*+i-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q4-c4">
+                                <div class="art-body">
+                                    <p>(D) abcd^e-fgh*+*^+i-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Please refer to The Whole
+                                   Conversion task in Infix
+                                   to Postfix Conversion
+                                   with Stack learning unit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mcq">
+                    <div class="preamble">
+                        <div class="art txt" title="question5">
+                            <div class="art-body">
+                                <p>Q5. Convert Infix to Postfix a + b * c - d ^ e ^ f</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="true">
+                        <div class="preamble">
+                            <div class="art txt" title="q5-c1">
+                                <div class="art-body">
+                                    <p>(A) abc * + def ^^-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q5-c2">
+                                <div class="art-body">
+                                    <p>(B) abc * + de ^ f ^-\</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q5-c3">
+                                <div class="art-body">
+                                    <p>(C) ab + c *d - e ^ f ^</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice" data-correct="false">
+                        <div class="preamble">
+                            <div class="art txt" title="q5-c4">
+                                <div class="art-body">
+                                    <p>(D) -+ a * bc ^^ def</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <div class="art txt" title="Explanation">
+                            <div class="art-body">
+                                <p>Please refer to The Whole
+                                   Conversion task in Infix
+                                   to Postfix Conversion
+                                   with Stack learning unit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lu" title="Feedback">
+            <div class="longt">
+                <h2 class="hlongt">Feedback of the Experiment</h2>
+            </div>
+            <div class="preamble">
+                <div class="art txt" title="Feedback Form">
+                    <div class="longt">
+                        <h2 class="hlongt">Feedback Form of the Experiment</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>The experiment ends here,thanks
+                           for participating! Please fill up
+                           the form.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lu" title="Further Readings/References">
+            <div class="longt">
+                <h1 class="hlongt">Further Readings and References of the Experiment</h1>
+            </div>
+            <div class="preamble" title="References">
+                <div class="longt">
+                    <h2 class="hlongt">References</h2>
+                </div>
+                <div class="art txt" title="Interactive Modules">
+                    <div class="longt">
+                        <h2 class="hlongt">Interactive Modules</h2>
+                    </div>
+                    <div class="art-body">
+                        <ul>
+                            <li><a href="http://interactivepython.org/runestone/static/pythonds/BasicDS/InfixPrefixandPostfixExpressions.html"> InfixPrefixandPostfixExpressions</a></li>
+                            <li><a href="http://scanftree.com/Data_Structure/prefix-postfix-infix-online-converter ">prefix-postfix-infix-online-converter</a></li>
+                            <li><a href="https://codeburst.io/conversion-of-infix-expression-to-postfix-expression-using-stack-data-structure-3faf9c212ab8">conversion-of-infix-expression-to-postfix-expression-using-stack-data-structure</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="art txt" title="Conversions Algorithms">
+                    <div class="longt">
+                        <h2 class="hlongt">Conversions Algorithms</h2>
+                    </div>
+                    <div class="art-body">
+                        <ul>
+                            <li><a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse_Polish_notation</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Shunting-yard_algorithm">Shunting-yard_algorithm</a></li>
+                            <li><a href="http://www.cs.utexas.edu/~EWD/MCReps/MR35.PDF">MR35</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="art txt" title="Conversions Quizzes">
+                    <div class="longt">
+                        <h2 class="hlongt">Conversions Quizzes</h2>
+                    </div>
+                    <div class="art-body">
+                        <ul>
+                            <li><a href="http://www.cs.kent.edu/~nmadi/CS23001/fix-Quiz.pdf">fix-Quiz</a></li>
+                            <li><a href="http://csis.pace.edu/~wolf/CS122/exexpans.html">exexpans</a></li>
+                            <li><a href="http://www.c4learn.com/mcq/data-structure-mcq/data-structure-mcq-stack-multiple-choice-questions-set-2/">data-structure-mcq-stack-multiple-choice-questions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/loader.js"></script>
+
+</body>
+
+</html>
